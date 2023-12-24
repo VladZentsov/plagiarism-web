@@ -1,0 +1,12 @@
+<div class="login-container">
+    <h2 class="login-title">Login</h2>
+    <form class="login-form">
+      <label class="login-label" for="username">Username:</label>
+      <input class="login-input" type="text" id="username" name="username" [(ngModel)]="username" required>
+  
+      <label class="login-label" for="password">Password:</label>
+      <input class="login-input" type="password" id="password" name="password" [(ngModel)]="password" required>
+  
+      <button class="login-button" type="button" (click)="login()">Login</button>
+    </form>
+  </div>

@@ -1,0 +1,22 @@
+<div>
+    <p><strong>Work Name:</strong> {{ compareResult.workName || '_' }}</p>
+    <p><strong>User Name:</strong> {{ compareResult.userName || '_' }}</p>
+    <p><strong>User Surname:</strong> {{ compareResult.userSurname || '_' }}</p>
+    <p><strong>User Group Name:</strong> {{ compareResult.userGroupName || '_' }}</p>
+  
+    <p *ngIf="compareResult.matchPercentage !== undefined">
+      <strong>Match Percentage:</strong> {{ compareResult.matchPercentage * 100 }}%
+    </p>
+  
+    <!-- Other properties and details as needed -->
+  
+    <div *ngFor="let identicalLines of compareResult.identicalLines">
+      <p><strong>Current Work Line Number:</strong> {{ identicalLines.currentWorkLineNumber }}</p>
+  
+      <p *ngIf="identicalLines.workToCompareLineNumbers">
+        <strong>Work To Compare Line Numbers:</strong> {{ identicalLines.workToCompareLineNumbers.join(', ') }}
+      </p>
+    </div>
+  
+    <!-- Render other details as needed -->
+  </div>

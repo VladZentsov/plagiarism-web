@@ -1,0 +1,26 @@
+<div>
+    <h2>File Upload</h2>
+    <input type="file" (change)="onFileSelected($event)" accept=".txt">
+    <button (click)="uploadFile()">Upload</button>
+</div>
+
+<button (click)="compareToAllWorks()">Load Data</button>
+
+<div class="text-container">
+<h2>API Response Text</h2>
+<p>{{ responseText }}</p>
+</div>
+
+<p>1: {{compareToAllWorksResult}}</p>
+<p>1: {{compareToAllWorksResult?.currentWork?.id}}</p>
+<p *ngIf="compareToAllWorksResult && compareToAllWorksResult.compareResults && compareToAllWorksResult.compareResults[0]">
+    2: {{ compareToAllWorksResult.compareResults[0].userName }}
+  </p>
+<div *ngIf="compareToAllWorksResult!=null&&compareToAllWorksResult.compareResults!=null" >
+    <p>AAAAAAAAAAAAAAAAAAA</p>
+    <div *ngFor="let compareResult of compareToAllWorksResult?.compareResults">
+        <p>BBBBBBBBBBBBBBB</p>
+        <app-compare-result [compareResult]="compareResult"></app-compare-result>
+        <hr /> <!-- Разделитель между результатами, если нужно -->
+    </div>
+</div>

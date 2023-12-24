@@ -1,0 +1,21 @@
+<div class="registration-container">
+    <h2 class="registration-title">Registration</h2>
+    <form class="registration-form" (ngSubmit)="onSubmit()">
+      <label class="registration-label" for="name">Name:</label>
+      <input class="registration-input" type="text" id="name" name="name" [(ngModel)]="user.name" required>
+  
+      <label class="registration-label" for="surname">Surname:</label>
+      <input class="registration-input" type="text" id="surname" name="surname" [(ngModel)]="user.surname" required>
+  
+      <label class="registration-label" for="universityYear">University Year:</label>
+      <input class="registration-input" type="number" id="universityYear" name="universityYear" [(ngModel)]="user.universityYear" required>
+  
+      <label class="registration-label" for="groupName">Group Name:</label>
+      <input class="registration-input" type="text" id="groupName" name="groupName" [(ngModel)]="user.groupName" required>
+  
+      <label class="registration-label" for="email">Email:</label>
+      <input class="registration-input" type="email" id="email" name="email" [(ngModel)]="user.email" required>
+  
+      <button class="registration-button" type="submit">Register</button>
+    </form>
+  </div>
